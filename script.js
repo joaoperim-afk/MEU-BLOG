@@ -1,19 +1,32 @@
 const themeToggleBtn = document.getElementById('theme-toggle');
 const themeIcon = document.getElementById('theme-icon');
+const themeText = document.getElementById('theme-text');
 const htmlElement = document.documentElement;
 
-function toggleTheme() {
-  // Verifica qual tema está ativo no atributo do html
-  const currentTheme = htmlElement.getAttribute('data-theme');
-  
-  if (currentTheme === 'light') {
-    htmlElement.setAttribute('data-theme', 'dark');
+// Função para aplicar o tema e atualizar a interface
+function applyTheme(theme) {
+  htmlElement.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
+
+  if (theme === 'dark') {
     themeIcon.textContent = '☀️';
+    themeText.textContent = 'Claro';
   } else {
-    htmlElement.setAttribute('data-theme', 'light');
     themeIcon.textContent = '🌙';
+    themeText.textContent = 'Escuro';
   }
 }
 
-// Escuta o clique no botão
+// Alterna entre escuro e claro
+function toggleTheme() {
+  const currentTheme = htmlElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+  applyTheme(newTheme);
+}
+
+// Carrega a preferência salva do usuário ao abrir a página
+const savedTheme = localStorage.getItem('theme') || 'light';
+applyTheme(savedTheme);
+
+// Evento de clique no botão
 themeToggleBtn.addEventListener('click', toggleTheme);

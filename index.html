@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,35 +9,58 @@
 <body>
 
   <header class="header-container">
-    <h1>Tech Insights</h1>
-    <button id="theme-toggle" aria-label="Alternar tema">
-      <span id="theme-icon">🌙</span>
+    <div class="logo">
+      <h1>Tech <span>Insights</span></h1>
+    </div>
+    <button id="theme-toggle" class="theme-btn" aria-label="Alternar tema">
+      <span id="theme-icon">🌙</span> Modos
     </button>
   </header>
 
   <main class="cards-container">
+    <!-- Card 1: Conceito Flexbox -->
     <article class="card">
       <div class="card-content">
-        <h2>Flexbox: O Segredo da Layouts Modernos</h2>
+        <h2>Flexbox: A "Caixa Elástica"</h2>
         <p>
-          O Flexbox funciona na prática como uma "caixa elástica". O segredo para dominá-lo é entender quem é o <strong>pai</strong> (container) e quem são os <strong>filhos</strong> (itens). No nosso caso, o <code>main</code> é o pai que organiza os cards, e o <code>article</code> é o pai que organiza o texto e as imagens dentro de si. Pratique mudando as porcentagens para ver como o layout reage!
+          O Flexbox funciona na prática como uma "caixa elástica". O segredo para dominá-lo é entender quem é o <strong>pai</strong> (container) e quem são os <strong>filhos</strong> (itens).
         </p>
-        <footer class="card-footer">
-          <p class="fonte-citacao"><strong>Fonte:</strong> Guia Didático de Layouts CSS / Conceito Flexbox Container-Item</p>
-        </footer>
+        <p>
+          No nosso caso, o <code>main</code> é o pai que organiza os cards, e o <code>article</code> é o pai que organiza o texto e as imagens dentro de si. Pratique mudando as porcentagens para ver como o layout reage!
+        </p>
       </div>
+      <footer class="card-footer">
+        <p class="fonte-citacao"><strong>Fonte:</strong> Guia Didático de Layouts CSS / Conceito Flexbox Container-Item</p>
+      </footer>
     </article>
 
+    <!-- Card 2: Curiosidade Histórica -->
     <article class="card">
       <div class="card-content">
-        <h2>Origem do Termo "Bug" na Computação</h2>
+        <h2>A Origem do Termo "Bug"</h2>
         <p>
-          Em 1947, a cientista Grace Hopper e sua equipe no Harvard Mark II encontraram uma mariposa presa em um relé do computador, interrompendo seu funcionamento. A mariposa foi removida e colada no diário de bordo com a anotação "Primeiro caso real de um bug sendo encontrado".
+          Em 1947, a cientista Grace Hopper e sua equipe no Harvard Mark II encontraram uma mariposa presa em um relé do computador, interrompendo seu funcionamento.
         </p>
-        <footer class="card-footer">
-          <p class="fonte-citacao"><strong>Fonte:</strong> <a href="https://www.navy.mil/" target="_blank" rel="noopener">U.S. Naval History and Heritage Command</a></p>
-        </footer>
+        <p>
+          A mariposa foi removida e colada no diário de bordo com a anotação "Primeiro caso real de um bug sendo encontrado".
+        </p>
       </div>
+      <footer class="card-footer">
+        <p class="fonte-citacao"><strong>Fonte:</strong> <a href="https://www.navy.mil/" target="_blank" rel="noopener">U.S. Naval History and Heritage Command</a></p>
+      </footer>
+    </article>
+
+    <!-- Card 3: Dado Técnico -->
+    <article class="card">
+      <div class="card-content">
+        <h2>A Velocidade da Fibra Óptica</h2>
+        <p>
+          Os cabos de fibra óptica transmitem dados usando pulsos de luz dentro de finos fios de vidro. A velocidade da luz no vidro é de aproximadamente 200.000 km/s (cerca de 30% mais lenta do que no vácuo devido ao índice de refração do material).
+        </p>
+      </div>
+      <footer class="card-footer">
+        <p class="fonte-citacao"><strong>Fonte:</strong> <a href="https://www.itu.int/" target="_blank" rel="noopener">União Internacional de Telecomunicações (ITU)</a></p>
+      </footer>
     </article>
   </main>
 

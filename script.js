@@ -1,20 +1,19 @@
 const themeToggleBtn = document.getElementById('theme-toggle');
 const themeIcon = document.getElementById('theme-icon');
+const htmlElement = document.documentElement;
 
-// Altera o tema e atualiza o ícone
 function toggleTheme() {
-  const currentTheme = document.documentElement.getAttribute('data-theme');
-  let newTheme = 'light';
-
-  if (currentTheme !== 'dark') {
-    newTheme = 'dark';
+  // Verifica qual tema está ativo no atributo do html
+  const currentTheme = htmlElement.getAttribute('data-theme');
+  
+  if (currentTheme === 'light') {
+    htmlElement.setAttribute('data-theme', 'dark');
     themeIcon.textContent = '☀️';
   } else {
+    htmlElement.setAttribute('data-theme', 'light');
     themeIcon.textContent = '🌙';
   }
-
-  document.documentElement.setAttribute('data-theme', newTheme);
 }
 
-// Evento de clique no botão
+// Escuta o clique no botão
 themeToggleBtn.addEventListener('click', toggleTheme);

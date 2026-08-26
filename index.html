@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Insights - O Blog de Tecnologia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header-container">
+    <h1>Tech Insights</h1>
+    <button id="theme-toggle" aria-label="Alternar tema">
+      <span id="theme-icon">🌙</span>
+    </button>
+  </header>
+
+  <main class="cards-container">
+    <article class="card">
+      <div class="card-content">
+        <h2>Flexbox: O Segredo da Layouts Modernos</h2>
+        <p>
+          O Flexbox funciona na prática como uma "caixa elástica". O segredo para dominá-lo é entender quem é o <strong>pai</strong> (container) e quem são os <strong>filhos</strong> (itens). No nosso caso, o <code>main</code> é o pai que organiza os cards, e o <code>article</code> é o pai que organiza o texto e as imagens dentro de si. Pratique mudando as porcentagens para ver como o layout reage!
+        </p>
+        <footer class="card-footer">
+          <p class="fonte-citacao"><strong>Fonte:</strong> Guia Didático de Layouts CSS / Conceito Flexbox Container-Item</p>
+        </footer>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="card-content">
+        <h2>Origem do Termo "Bug" na Computação</h2>
+        <p>
+          Em 1947, a cientista Grace Hopper e sua equipe no Harvard Mark II encontraram uma mariposa presa em um relé do computador, interrompendo seu funcionamento. A mariposa foi removida e colada no diário de bordo com a anotação "Primeiro caso real de um bug sendo encontrado".
+        </p>
+        <footer class="card-footer">
+          <p class="fonte-citacao"><strong>Fonte:</strong> <a href="https://www.navy.mil/" target="_blank" rel="noopener">U.S. Naval History and Heritage Command</a></p>
+        </footer>
+      </div>
+    </article>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

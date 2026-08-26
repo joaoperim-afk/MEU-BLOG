@@ -1,21 +1,24 @@
-/* Variáveis para controle de tema (Padrão: Claro) */
+/* Definição das variáveis de tema */
 :root {
-  --bg-color: #f4f6f9;
-  --card-bg: #ffffff;
-  --text-color: #1a1a1a;
+  --bg-gradient: linear-gradient(135deg, #eef2f3 0%, #8e9eab 100%);
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --text-color: #2c3e50;
   --accent-color: #0066cc;
-  --border-color: #e0e0e0;
+  --border-color: #dcdcdc;
   --subtext-color: #555555;
+  --code-bg: #e2e8f0;
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* Variáveis para Modo Escuro */
 [data-theme="dark"] {
-  --bg-color: #121212;
-  --card-bg: #1e1e1e;
-  --text-color: #e0e0e0;
-  --accent-color: #4da6ff;
-  --border-color: #333333;
-  --subtext-color: #aaa;
+  --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  --card-bg: rgba(30, 41, 59, 0.9);
+  --text-color: #f1f5f9;
+  --accent-color: #38bdf8;
+  --border-color: #334155;
+  --subtext-color: #94a3b8;
+  --code-bg: #0f172a;
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
 * {
@@ -25,79 +28,111 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--bg-color);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--bg-gradient);
+  background-attachment: fixed;
   color: var(--text-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
-  line-height: 1.6;
+  min-height: 100vh;
   padding: 20px;
+  transition: background 0.4s ease, color 0.4s ease;
+  line-height: 1.6;
 }
 
-/* Header com Flexbox */
+/* Header estilizado com Flexbox */
 .header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   max-width: 1000px;
-  margin: 0 auto 30px auto;
-  padding-bottom: 15px;
-  border-bottom: 2px solid var(--border-color);
+  margin: 0 auto 40px auto;
+  padding: 15px 20px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(5px);
 }
 
-#theme-toggle {
-  background: var(--card-bg);
-  border: 1px solid var(--border-color);
+.logo h1 {
+  font-size: 1.8rem;
   color: var(--text-color);
-  font-size: 1.2rem;
-  padding: 8px 12px;
+}
+
+.logo span {
+  color: var(--accent-color);
+}
+
+.theme-btn {
+  background: transparent;
+  border: 2px solid var(--accent-color);
+  color: var(--text-color);
+  font-size: 0.95rem;
+  font-weight: bold;
+  padding: 8px 16px;
   border-radius: 20px;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
 }
 
-#theme-toggle:hover {
-  transform: scale(1.05);
+.theme-btn:hover {
+  background: var(--accent-color);
+  color: #fff;
 }
 
-/* MAIN (Pai dos Cards) usando Flexbox */
+/* Container do Blog (Pai dos Cards) */
 .cards-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 25px;
   justify-content: center;
   max-width: 1000px;
   margin: 0 auto;
 }
 
-/* ARTICLE (Filho do Main / Pai do Conteúdo Interno) */
+/* Article (Pai do Conteúdo Interno) */
 .card {
-  background-color: var(--card-bg);
+  background: var(--card-bg);
   border: 1px solid var(--border-color);
-  border-radius: 8px;
-  flex: 1 1 calc(45% - 20px);
-  min-width: 280px;
+  border-radius: 12px;
+  flex: 1 1 calc(45% - 25px);
+  min-width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  padding: 25px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(5px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 
 .card h2 {
   color: var(--accent-color);
   margin-bottom: 12px;
+  font-size: 1.3rem;
+}
+
+.card p {
+  margin-bottom: 10px;
 }
 
 code {
-  background-color: rgba(0, 0, 0, 0.05);
-  padding: 2px 6px;
+  background-color: var(--code-bg);
+  color: var(--accent-color);
+  padding: 2px 8px;
   border-radius: 4px;
+  font-family: monospace;
 }
 
-/* Tag de Fonte */
+/* Citação / Fonte */
 .card-footer {
-  margin-top: 15px;
-  padding-top: 10px;
+  margin-top: 20px;
+  padding-top: 12px;
   border-top: 1px dashed var(--border-color);
   font-size: 0.85rem;
   color: var(--subtext-color);

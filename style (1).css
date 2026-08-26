@@ -1,0 +1,113 @@
+/* Variáveis para controle de tema (Padrão: Claro) */
+:root {
+  --bg-color: #f4f6f9;
+  --card-bg: #ffffff;
+  --text-color: #1a1a1a;
+  --accent-color: #0066cc;
+  --border-color: #e0e0e0;
+  --subtext-color: #555555;
+}
+
+/* Variáveis para Modo Escuro */
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --card-bg: #1e1e1e;
+  --text-color: #e0e0e0;
+  --accent-color: #4da6ff;
+  --border-color: #333333;
+  --subtext-color: #aaa;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Header com Flexbox */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto 30px auto;
+  padding-bottom: 15px;
+  border-bottom: 2px solid var(--border-color);
+}
+
+#theme-toggle {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  font-size: 1.2rem;
+  padding: 8px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+#theme-toggle:hover {
+  transform: scale(1.05);
+}
+
+/* MAIN (Pai dos Cards) usando Flexbox */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ARTICLE (Filho do Main / Pai do Conteúdo Interno) */
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  flex: 1 1 calc(45% - 20px);
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.card h2 {
+  color: var(--accent-color);
+  margin-bottom: 12px;
+}
+
+code {
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* Tag de Fonte */
+.card-footer {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border-color);
+  font-size: 0.85rem;
+  color: var(--subtext-color);
+}
+
+.card-footer a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.card-footer a:hover {
+  text-decoration: underline;
+}
